@@ -11,7 +11,6 @@ var svnclient = require('./svn'),
  * @constructor
  */
 var SVNSync = function (obj, cb) {
-
   if (!obj.dest) {
     throw new Error("Destination (dest) folder is required.");
   }
@@ -61,7 +60,6 @@ var SVNSync = function (obj, cb) {
         password: password
       });
       client.checkout([obj.repo, '--quiet', '--non-interactive'], function (err, data) {
-
         if (err) {
           rimraf(obj.dest + '/' + obj.localfolder, function () {
             console.info('Could not connect to repository. Check your credentials and VPN settings.');

@@ -1,6 +1,6 @@
 'use strict';
 
-var Spawn = require('easy-spawn'),
+var Spawn = require('./espawn'),
   util = require('util'),
   xml2js = require('xml2js'),
   async = require('async'),
@@ -39,7 +39,6 @@ Client.prototype.cmd = function (params, callback) {
 /*
  SVN commands
  */
-
 Client.prototype.checkout = function (params, callback) {
   // try making dir
   var cwd = this.getOption('cwd');
@@ -65,6 +64,11 @@ Client.prototype.checkout = function (params, callback) {
   this.cmd(params, callback);
 };
 
+/**
+ * Update
+ * @param params
+ * @param callback
+ */
 Client.prototype.update = function (params, callback) {
   if (typeof params === 'function') {
     callback = params;
@@ -75,6 +79,11 @@ Client.prototype.update = function (params, callback) {
   this.cmd(params, callback);
 };
 
+/**
+ * Commit
+ * @param params
+ * @param callback
+ */
 Client.prototype.commit = function (params, callback) {
   if (typeof params === 'function') {
     callback = params;
@@ -85,6 +94,11 @@ Client.prototype.commit = function (params, callback) {
   this.cmd(params, callback);
 };
 
+/**
+ * Add
+ * @param params
+ * @param callback
+ */
 Client.prototype.add = function (params, callback) {
   if (typeof params === 'function') {
     callback = params;
@@ -95,6 +109,11 @@ Client.prototype.add = function (params, callback) {
   this.cmd(params, callback);
 };
 
+/**
+ * del
+ * @param params
+ * @param callback
+ */
 Client.prototype.del = function (params, callback) {
   if (typeof params === 'function') {
     callback = params;
@@ -105,6 +124,11 @@ Client.prototype.del = function (params, callback) {
   this.cmd(params, callback);
 };
 
+/**
+ * Info
+ * @param params
+ * @param callback
+ */
 Client.prototype.info = function (params, callback) {
   if (typeof params === 'function') {
     callback = params;
@@ -155,6 +179,11 @@ Client.prototype.getInfo = function (params, callback) {
     });
 };
 
+/**
+ * Status
+ * @param params
+ * @param callback
+ */
 Client.prototype.status = function (params, callback) {
   if (typeof params === 'function') {
     callback = params;
@@ -220,6 +249,11 @@ Client.prototype.getStatus = function (params, callback) {
   });
 };
 
+/**
+ * Log
+ * @param params
+ * @param callback
+ */
 Client.prototype.log = function (params, callback) {
   if (typeof params === 'function') {
     callback = params;
@@ -349,6 +383,11 @@ Client.prototype.addLocal = function (options, callback) {
   });
 };
 
+/**
+ * Local unversioned
+ * @param options
+ * @param callback
+ */
 Client.prototype.addLocalUnversioned = function (options, callback) {
   if (typeof options === 'function') {
     callback = options;

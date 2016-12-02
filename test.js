@@ -1,9 +1,14 @@
-var svnsync = require('./index');
+var svnsync = require('./index'),
+  rimraf = require('rimraf');
 
-svnsync({
-  'dest': './out',
-  'repo': 'https://svn.bla.com/technology/GATEWAY_JS/tags/1.0.5',
-  'localfolder': 'code'
-}, function() {
-  console.log("done!");
+rimraf('./out/code', function() {
+  svnsync({
+    'dest': './out',
+    'repo': 'https://codevault2.foreseeresults.com/implementation/Clients R/REI/tags/18.4.11',
+    'localfolder': 'code',
+    "username": "alexei.white",
+    "password": "Foresee2016"
+  }, function() {
+    console.log("Test complete.");
+  });
 });

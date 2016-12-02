@@ -1,6 +1,6 @@
 {
   "name": "node-svnsync",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Node helper library for keeping a remove subversion library syncronized with a local folder.",
   "main": "index.js",
   "scripts": {
@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/alexsaves/node-svnsync",
   "dependencies": {
-    "async": "^1.0.0",
-    "easy-spawn": "0.0.2",
-    "prompt": "^0.2.14",
-    "rimraf": "^2.3.4",
-    "xml2js": "^0.4.9"
+    "async": "^2.1.4",
+    "config-obj": "0.0.1",
+    "prompt": "^1.0.0",
+    "rimraf": "^2.5.4",
+    "xml2js": "^0.4.17"
   },
   "engine": "node >= 0.10.30"
 }
